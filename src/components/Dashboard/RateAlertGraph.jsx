@@ -18,8 +18,7 @@ const RateAlertDashboard = () => {
     const [currentRate, setCurrentRate] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [showSetAlert, setShowSetAlert] = useState(false);
-    const selectedTimeLine = "1Y";
+    const [showSetAlert, setShowSetAlert] = useState(false); // State to manage modal visibility
 
     const fetchData = async () => {
         setIsLoading(true);
@@ -27,7 +26,7 @@ const RateAlertDashboard = () => {
         try {
             const code = selectedCountry === "GBP" ? "GBPINR=X" : "AEDINR=X";
             const response = await fetch(
-                `https://web-api.vance.club/public/api/currency-converter/forex?code=${selectedCountry}INR%3DX&timeline=${selectedTimeLine}`
+                `https://web-api.vance.club/public/api/currency-converter/forex?code=${code}&timeline=1M`
             );
             if (!response.ok) {
                 throw new Error("Network response was not ok");
@@ -67,7 +66,7 @@ const RateAlertDashboard = () => {
         setShowSetAlert(!showSetAlert);
     };
 
-    const CustomTooltip = ({ active, payload }) => {
+    const CustomTooltip = ({ active, payload, label }) => {
         if (active && payload && payload.length) {
             return (
                 <div className="bg-indigo-600 text-white p-2 rounded-md">

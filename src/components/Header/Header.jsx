@@ -23,7 +23,7 @@ const Header = () => {
                         />
                     </button>
                     <button
-                        onClick={() => navigate("/dashboard")}
+                        onClick={() => navigate("/MainPage")}
                         className="bg-[#81EBAB] flex justify-center items-center gap-1 text-base text-[#0B0B0B] font-semibold px-4 py-3 rounded-[100px]"
                     >
                         Login

@@ -1,6 +1,5 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Login from "./components/Authentication/Login";
 import MainPage from "./components/Dashboard/MainPage";
 import RateAlertDashboard from "./components/Dashboard/RateAlertGraph";
 import Dashboard from "./components/Dashboard/Dashboard";
@@ -15,7 +14,6 @@ function App() {
     return (
         <Routes>
             <Route path="/" element={<AnimationWrapper />} />
-            <Route path="/login" element={<Login />} />
             <Route
                 path="/rate-alert-dashboard"
                 element={<RateAlertDashboard />}
